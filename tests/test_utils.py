@@ -4,7 +4,6 @@ from src import main
 
 PATH = 'operations.json'
 def test_Bank():
-    assert 1 == 1
     assert type(utils.Bank(PATH).open_json(1)) == list
     assert type(utils.Bank(PATH).open_json(-2)) == list
     assert type(utils.Bank(PATH).open_json(0)) == str
