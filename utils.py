@@ -7,12 +7,6 @@ class Bank:
         self.last_of_transaction = last_of_transaction
         self.python_list = None
         self.list_of_last_five = None
-        self.date = None
-        self.description = None
-        self.from_ = None
-        self.to = None
-        self.amount = None
-        self.cur_name = None
 
     def open_json(self, last_of):
         try:
