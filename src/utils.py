@@ -15,14 +15,14 @@ class Bank:
         self.cur_name = None
 
     def open_json(self, last_of):
-        try:
-            with open(self.PATH) as file:
+        with open(self.PATH) as file:
+            try:
                 file = json.loads(file.read())
-        except BaseException:
-            file = []
-        finally:
-            self.python_list = file
-            return self.sort_collection(self.python_list, last_of)
+            except BaseException:
+                file = []
+            finally:
+                self.python_list = file
+                return self.sort_collection(self.python_list, last_of)
 
     def sort_collection(self, python_list, last_of):
         date_list = []
@@ -50,7 +50,7 @@ class Bank:
 
         self.to = f"{self.to[:5]} **{self.to[-4:]}"
 
-        return (f"{self.date} {self.description} \n"
+        return (f"{self.date[:10].replace('-','.')} {self.description} \n"
                 f"{self.from_} -> {self.to} \n"
                 f"{self.amount} {self.cur_name}\n"
                 )
