@@ -1,4 +1,4 @@
-import utils as ut
+from src import utils as ut
 
 
 def main(PATH):
