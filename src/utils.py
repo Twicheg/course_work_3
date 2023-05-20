@@ -50,7 +50,7 @@ class Bank:
 
         self.to = f"{self.to[:5]} **{self.to[-4:]}"
 
-        return (f"{self.date[:10]} {self.description} \n"
+        return (f"{self.date[:10].replace('-','.')} {self.description} \n"
                 f"{self.from_} -> {self.to} \n"
                 f"{self.amount} {self.cur_name}\n"
                 )
