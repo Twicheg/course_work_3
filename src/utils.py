@@ -3,6 +3,7 @@ import json
 
 class Bank:
     def __init__(self, PATH, last_of_transaction=5):
+        """Инициализатор"""
         self.PATH = PATH
         self.last_of_transaction = last_of_transaction
         self.python_list = None
@@ -15,6 +16,7 @@ class Bank:
         self.cur_name = None
 
     def open_json(self, last_of):
+        """Метод открытия файла в формате json"""
         with open(self.PATH) as file:
             try:
                 file = json.loads(file.read())
@@ -25,6 +27,7 @@ class Bank:
                 return self.sort_collection(self.python_list, last_of)
 
     def sort_collection(self, python_list, last_of):
+        """ Метод возвращаем отсортированный список дат операций с банком"""
         date_list = []
         if not python_list:
             return 'empty python_list'
@@ -40,6 +43,7 @@ class Bank:
         return date_list[:last_of]
 
     def __repr__(self):
+        """Метод отображения"""
 
         self.from_ = (
             f"{' '.join(self.from_.split()[:-1])} "
