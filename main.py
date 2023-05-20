@@ -4,9 +4,6 @@ import utils as ut
 def main(PATH):
     operation = ut.Bank(PATH)
     operation.list_of_last_five = operation.open_json(operation.last_of_transaction)
-    # z=operation.ready_for_print(operation.python_list,operation.list_of_last_five)
-    # print(operation.list_of_last_five,operation.python_list)
-    # print(f'{operation.list_of_last_five},\n {operation.python_list}')
     for i in operation.list_of_last_five:
         for j in operation.python_list:
             if not j.keys():
