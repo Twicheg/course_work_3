@@ -7,13 +7,19 @@ class Bank:
         self.last_of_transaction = last_of_transaction
         self.python_list = None
         self.list_of_last_five = None
+        self.date = None
+        self.description = None
+        self.from_ = None
+        self.to = None
+        self.amount = None
+        self.cur_name = None
 
     def open_json(self, last_of):
         try:
             with open(self.PATH) as file:
                 file = json.loads(file.read())
         except BaseException:
-            return []
+            file = []
         finally:
             self.python_list = file
             return self.sort_collection(self.python_list, last_of)
@@ -28,7 +34,10 @@ class Bank:
                 continue
         date_list.sort(reverse=True)
         return date_list[:last_of]
-    def ready_for_print(self,python_list,last_of_list):
-        pass
+
     def __repr__(self):
-        return f''
+        return (f"{self.date} {self.description} \n"
+               f"{self.from_} -> {self.to} \n"
+               f"{self.amount} {self.cur_name}\n"
+                )
+
