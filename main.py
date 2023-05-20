@@ -4,17 +4,17 @@ import utils as ut
 def main(PATH):
     operation = ut.Bank(PATH)
     operation.list_of_last_five = operation.open_json(operation.last_of_transaction)
-    for i in operation.list_of_last_five:
-        for j in operation.python_list:
-            if not j.keys():
+    for date in operation.list_of_last_five:
+        for dicts in operation.python_list:
+            if not dicts.keys():
                 continue
-            if i == j['date']:
-                operation.date = j['date']
-                operation.description = j['description']
-                operation.from_ = j['from'] if 'from' in j.keys() else 'UNKNOW'
-                operation.to = j['to']
-                operation.amount = j['operationAmount']['amount']
-                operation.cur_name = j['operationAmount']['currency']['name']
+            if date == dicts['date']:
+                operation.date = dicts['date']
+                operation.description = dicts['description']
+                operation.from_ = dicts['from'] if 'from' in dicts.keys() else 'UNKNOW'
+                operation.to = dicts['to']
+                operation.amount = dicts['operationAmount']['amount']
+                operation.cur_name = dicts['operationAmount']['currency']['name']
         print(operation)
 
 
