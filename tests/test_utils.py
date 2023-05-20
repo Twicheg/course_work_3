@@ -1,18 +1,10 @@
 import pytest
 from src import utils
 
-
-@pytest.fixture
-def class_exem():
-    PATH = 'operations.json'
-    x = utils.Bank(PATH)
-    return x
-
-
+PATH = 'operations.json'
 def test_Bank():
-    assert 1==1
-    #assert type(class_exem.open_json(1)) == list
-    # assert type(class_exem.open_json(-2)) == list
-    # assert type(class_exem.open_json(0)) == list
-    # assert x.sort_collection()
-    pass
+    assert 1 == 1
+    assert type(utils.Bank(PATH).open_json(1)) == list
+    assert type(utils.Bank(PATH).open_json(-2)) == list
+    assert type(utils.Bank(PATH).open_json(0)) == str
+    assert utils.Bank(PATH).sort_collection([], 1) == 'empty python_list'
