@@ -21,5 +21,5 @@ def main(PATH):
     return 'complited'
 
 if __name__ == '__main__':
-    PATH = '/operations.json'
+    PATH = 'operations.json'
     main(PATH)
