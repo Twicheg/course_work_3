@@ -29,7 +29,7 @@ class Bank:
         if not python_list:
             return 'empty python_list'
         if last_of == 0:
-            return 'bad slice'
+            return 'empty python_list'
         for dicts in python_list:
             try:
                 if dicts["state"] == "EXECUTED":

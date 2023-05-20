@@ -2,6 +2,8 @@ from src import utils as ut
 
 
 def main(PATH):
+    if not PATH or PATH==None:
+        return 'zero-PATH incoming'
     operation = ut.Bank(PATH)
     operation.list_of_last_five = operation.open_json(operation.last_of_transaction)
     for date in operation.list_of_last_five:
@@ -16,8 +18,8 @@ def main(PATH):
                 operation.amount = dicts['operationAmount']['amount']
                 operation.cur_name = dicts['operationAmount']['currency']['name']
         print(operation)
-
+    return 'complited'
 
 if __name__ == '__main__':
-    PATH = 'operations.json'
+    PATH = '/operations.json'
     main(PATH)
