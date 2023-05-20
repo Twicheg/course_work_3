@@ -30,8 +30,14 @@ class Bank:
         return date_list[:last_of]
 
     def __repr__(self):
-        return (f"{self.date} {self.description} \n"
-               f"{self.from_} -> {self.to} \n"
-               f"{self.amount} {self.cur_name}\n"
-                )
+        self.from_ = (f"{' '.join(self.from_.split()[:-1])} "
+                      f"{self.from_.split()[-1][:4]}"
+                      f" {self.from_.split()[-1][4:6]}**"
+                      f" **** {self.from_.split()[-1][-4:]}"
+                      ) if self.from_ != 'UNKNOW' else 'UNKNOW'
+        self.to = f"{self.to[:5]} **{self.to[-4:]}"
 
+        return (f"{self.date} {self.description} \n"
+                f"{self.from_} -> {self.to} \n"
+                f"{self.amount} {self.cur_name}\n"
+                )
